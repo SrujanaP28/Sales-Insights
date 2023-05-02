@@ -1,0 +1,21 @@
+SQL QUERIES: 
+
+SELECT currency FROM transactions;
+SELECT distinct(transactions.currency) from transactions;
+select count(*) from transactions where transactions.currency='INR\r';
+select count(*) from transactions where transactions.currency='INR';
+select count(*) from transactions where transactions.currency='USD\r';
+select * from transactions where transactions.currency='USD' or transactions.currency='USD\r';
+SELECT SUM(transactions.sales_amount) from transactions INNER JOIN date ON transactions.order_date=date.date WHERE date.year=2020 and date.month_name="NOVEMBER" and(transactions.currency="INR\r" or transactions.currency="USD\r");
+
+
+DESCRIPTION:
+PROBLEM STATEMENT: Sales made and revenue earned in the past 3 years.
+SAMPLE DATA: Extracted sample sales data from a GitHub account. 
+
+PROCEDURE:
+CONNECTING&CLEANING:
+Download and install the Power query mysql database connector.
+Import sales data from MySQL, load and transform the data to the Power query editor. 
+After the transformation of data, detect and eliminate reductant data and also ensure data reliability.
+Creating a dashboard that will answer the problem statement and help the company to make data-driven decisions.
